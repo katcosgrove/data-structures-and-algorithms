@@ -19,21 +19,6 @@
 
 # insertShiftArray([1, 2, 3, 4], 5)
 
-# Does work, but I don't think len() is allowed
-# def insertShiftArray(arr, val):
-#     counter = 0
-#     new_list = arr + [0]
-
-#     for item in arr:
-#         if counter == len(arr) / 2:
-#             new_list[counter] = val
-#             counter += 1
-
-#         new_list[counter] = item
-#         counter += 1
-#     print(new_list)
-
-# insertShiftArray([1, 2, 3, 4], 5)
 
 # Also doesn't work, and anyway, I don't think slicing lists is allowed
 # def insertShiftArray(arr, val):
