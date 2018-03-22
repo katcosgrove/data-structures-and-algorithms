@@ -25,26 +25,50 @@
 # insertShiftArray([1, 2, 3, 4, 5, 6, 7], 5)
 
 
+# def insertShiftArray(arr, val):
+#     """
+# Arguments: A list of integers and an integer to be added
+# Output: A new list with the new value added in the middle
+# Issues: This one accounts for an even array, but not odd
+#     """
+#     counter = 0
+#     new_list = arr + [0]
+
+#     for item in arr:
+#         if counter == len(arr) / 2:
+#             new_list[counter] = val
+#             counter += 1
+
+#         new_list[counter] = item
+#         counter += 1
+
+#     return(new_list)
+
 def insertShiftArray(arr, val):
-    """
-Arguments: A list of integers and an integer to be added
-Output: A new list with the new value added in the middle
-Issues: This one accounts for an even array, but not odd
-    """
-    counter = 0
+    length = len(arr)
     new_list = arr + [0]
-
-    for item in arr:
-        if counter == len(arr) / 2:
-            new_list[counter] = val
+    counter = 0
+    if length % 2 == 0:
+        for item in arr:
+            if counter == length / 2:
+                new_list[counter] = val
+                counter += 1
+            new_list[counter] = item
             counter += 1
+        return new_list
 
-        new_list[counter] = item
-        counter += 1
+    else:
+        for item in arr:
+            if counter == round(length / 2):
+                counter += 1
+                new_list[counter] = val
+            # counter += 1
+            new_list[counter] = item
+            counter += 1
+        return new_list
 
-    return(new_list)
 
-insertShiftArray([20, 30, 59, 70], 200)
+# insertShiftArray([20, 30, 59, 70], 200)
 
 
 # Doesn't work, but also doesn't use any built-in methods. Progress?
