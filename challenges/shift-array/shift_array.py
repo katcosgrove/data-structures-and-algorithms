@@ -24,7 +24,6 @@
 
 # insertShiftArray([1, 2, 3, 4, 5, 6, 7], 5)
 
-
 # def insertShiftArray(arr, val):
 #     """
 # Arguments: A list of integers and an integer to be added
