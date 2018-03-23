@@ -24,7 +24,6 @@
 
 # insertShiftArray([1, 2, 3, 4, 5, 6, 7], 5)
 
-
 # def insertShiftArray(arr, val):
 #     """
 # Arguments: A list of integers and an integer to be added
@@ -44,67 +43,19 @@
 
 #     return(new_list)
 
-def insertShiftArray(arr, val):
-    length = len(arr)
-    new_list = arr + [0]
-    counter = 0
-    if length % 2 == 0:
-        for item in arr:
-            if counter == length / 2:
-                new_list[counter] = val
-                counter += 1
-            new_list[counter] = item
-            counter += 1
-        return new_list
-
-    else:
-        for item in arr:
-            if counter == round(length / 2):
-                counter += 1
-                new_list[counter] = val
-            # counter += 1
-            new_list[counter] = item
-            counter += 1
-        return new_list
-
-
 # insertShiftArray([20, 30, 59, 70], 200)
 
 
-# Doesn't work, but also doesn't use any built-in methods. Progress?
-# def insertShiftArray(arr, val):
-#     counter = 0
-#     new_list = []
-#     for item in arr:
-#         counter += 1
+# This works now, if it's okay to use range()
+def insertShiftArray(arr, num):
+    answer = [0] * (len(arr) + 1)
+    middle = (len(arr) + len(arr) % 2) // 2
 
-#     counter = counter // 2
-
-#     for i in arr:
-#         if arr[i] > counter:
-#             new_list[i] = new_list + arr[i]
-#         elif arr[i] == counter:
-#             new_list[i] = new_list + val
-#         else:
-#             new_list[i] = new_list + arr[i]
-#     print(new_list)
-
-# insertShiftArray([1, 2, 3, 4], 5)
-
-
-# Also doesn't work, and anyway, I don't think slicing lists is allowed
-# def insertShiftArray(arr, val):
-#     counter = 0
-#     new_array = []
-
-#     for item in arr:
-#         counter += 1
-
-#     if counter / 2 == 0:
-#         counter = counter / 2
-#         new_array = arr[0:(counter + 1)] + val
-#     else:
-#         counter = counter // 2
-#         new_array = arr[0:counter] + val
-
-#     print(new_array)
+    for item in range(len(answer)):
+        if item < middle:
+            answer[item] = arr[item]
+        elif item == middle:
+            answer[item] = num
+        else:
+            answer[item] = arr[item - 1]
+    return answer
