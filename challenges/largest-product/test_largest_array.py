@@ -6,3 +6,4 @@ def test_LargestArray():
 
 def test_LargestArray():
     assert la.LargestArray([[0]]) == 0
+    

@@ -1,5 +1,8 @@
 def LargestArray(arr):
-
+    
+"""
+Finds the largest product in a 2D array
+"""
     answer = 0
     counter = 0
     new_arr = []
@@ -11,3 +14,4 @@ def LargestArray(arr):
         if item > answer:
             answer = item
     return answer
+
