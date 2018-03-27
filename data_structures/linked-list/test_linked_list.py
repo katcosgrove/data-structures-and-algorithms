@@ -41,3 +41,16 @@ def test_search(small_ll):
 def test_fail_search(small_ll):
     """Test failing search."""
     assert small_ll.find(6) is False
+
+
+# def test_append(small_ll):
+#     """Test append to end of list."""
+#     assert small_ll.append(5) == [1, 2, 3, 4, 5]
+
+
+# def test_before(small_ll):
+#     assert small_ll.insert_before(3, 10) == [1, 2, 10, 3, 4]
+
+
+# def test_after(small_ll):
+#     assert small_ll.insert_after(3, 10) == [1, 2, 3, 10, 4]

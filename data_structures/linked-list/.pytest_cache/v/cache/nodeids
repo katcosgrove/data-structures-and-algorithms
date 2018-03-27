@@ -3,5 +3,6 @@
   "test_linked_list.py::test_repr",
   "test_linked_list.py::test_len",
   "test_linked_list.py::test_search",
-  "test_linked_list.py::test_fail_search"
+  "test_linked_list.py::test_fail_search",
+  "test_linked_list.py::test_append"
 ]
