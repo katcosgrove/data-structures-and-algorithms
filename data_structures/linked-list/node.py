@@ -8,12 +8,5 @@ class Node:
 
     def __str__(self):
         """Return the value as a string."""
-        return '{val}'.format(val=self.val)
-
-    def get_data(self):
-        """Return value of current node."""
         return self.val
 
-    def get_next(self):
-        """Get the next node in the list."""
-        return self._next

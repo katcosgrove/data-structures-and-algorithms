@@ -32,10 +32,30 @@ class LinkedList:
         self._size += 1
 
     def find(self, val):
-        """Find a value."""
         search = self.head
         while search:
-            if search.get_data() == val:
+            if val == search.val:
                 return True
-            search = search.get_next()
+            search = search._next
         return False
+
+    def append(self, val):
+        """Append a node to the end of the list."""
+        search = self.head
+        while search._next is not None:
+            search = search._next
+        search._next = Node(val)
+
+    # def insert_before(self, val, new_val):
+    #     """Insert a new node before the matching value."""
+    #     search = self.head
+    #     while search._next.val != val:
+    #         search = search._next
+    #     search = Node(new_val, search._next)
+
+    # def insert_after(self, val, new_val):
+    #     """Insert a new node after the matching value."""
+    #     search = self.head
+    #     while search.val != val:
+    #         search = search._next
+    #     search.next = Node(new_val, search._next)
