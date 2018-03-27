@@ -39,6 +39,8 @@ class LinkedList:
             search = search._next
         return False
 
+    # I think these should work, but I'm trying to figure out how to write tests for them
+
     def append(self, val):
         """Append a node to the end of the list."""
         search = self.head
@@ -46,16 +48,22 @@ class LinkedList:
             search = search._next
         search._next = Node(val)
 
-    # def insert_before(self, val, new_val):
-    #     """Insert a new node before the matching value."""
-    #     search = self.head
-    #     while search._next.val != val:
-    #         search = search._next
-    #     search = Node(new_val, search._next)
+    def insert_before(self, val, new_val):
+        """Insert a new node before the matching value."""
+        try:
+            search = self.head
+            while search._next.val != val:
+                search = search._next
+            search = Node(new_val, search._next)
+        except (ValueError, KeyError):
+            print('That is not a valid value!')
 
-    # def insert_after(self, val, new_val):
-    #     """Insert a new node after the matching value."""
-    #     search = self.head
-    #     while search.val != val:
-    #         search = search._next
-    #     search.next = Node(new_val, search._next)
+    def insert_after(self, val, new_val):
+        """Insert a new node after the matching value."""
+        try:
+            search = self.head
+            while search.val != val:
+                search = search._next
+            search.next = Node(new_val, search._next)
+        except (ValueError, KeyError):
+            print('That is not a valid value!')
