@@ -41,19 +41,19 @@ class LinkedList:
 
     def append(self, val):
         """Append a node to the end of the list."""
-        if val is str:
-            raise Exception('Please enter an integer, not a string!')
-
-        if self.head is None:
-            self.insert(val)
-        else:
-            search = self.head
-            while search:
-                if search._next is None:
-                    search._next = Node(val)
-                    self._size += 1
-                    break
-                search = search._next
+        try:
+            if self.head is None:
+                self.insert(val)
+            else:
+                search = self.head
+                while search:
+                    if search._next is None:
+                        search._next = Node(val)
+                        self._size += 1
+                        break
+                    search = search._next
+        except (ValueError, KeyError):
+            raise Exception('That is not a valid value!')
 
 
     def insert_before(self, val, newVal):
@@ -69,7 +69,6 @@ class LinkedList:
                     new_node._next = search
                     previous._next = new_node
                     self._size += 1
-                break
             previous = search
             search = search._next
 
@@ -82,7 +81,6 @@ class LinkedList:
                 search._next = Node(newVal)
                 search._next._next = reference
                 self._size += 1
-                break
             search = search._next
 
     def kthFromEnd(self, k):
