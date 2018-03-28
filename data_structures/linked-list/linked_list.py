@@ -39,31 +39,68 @@ class LinkedList:
             search = search._next
         return False
 
-    # I think these should work, but I'm trying to figure out how to write tests for them
-
     def append(self, val):
         """Append a node to the end of the list."""
-        search = self.head
-        while search._next is not None:
-            search = search._next
-        search._next = Node(val)
+        if val is str:
+            raise Exception('Please enter an integer, not a string!')
 
-    def insert_before(self, val, new_val):
+        if self.head is None:
+            self.insert(val)
+        else:
+            search = self.head
+            while search:
+                if search._next is None:
+                    search._next = Node(val)
+                    self._size += 1
+                    break
+                search = search._next
+
+
+    def insert_before(self, val, newVal):
         """Insert a new node before the matching value."""
-        try:
-            search = self.head
-            while search._next.val != val:
-                search = search._next
-            search = Node(new_val, search._next)
-        except (ValueError, KeyError):
-            print('That is not a valid value!')
+        search = self.head
+        previous = None
+        while search:
+            if search.val == val:
+                if previous is None:
+                    self.insert(newVal)
+                else:
+                    new_node = Node(newVal)
+                    new_node._next = search
+                    previous._next = new_node
+                    self._size += 1
+                break
+            previous = search
+            search = search._next
 
-    def insert_after(self, val, new_val):
+    def insert_after(self, val, newVal):
         """Insert a new node after the matching value."""
-        try:
-            search = self.head
-            while search.val != val:
-                search = search._next
-            search.next = Node(new_val, search._next)
-        except (ValueError, KeyError):
-            print('That is not a valid value!')
+        search = self.head
+        while search:
+            if search.val == val:
+                reference = search._next
+                search._next = Node(newVal)
+                search._next._next = reference
+                self._size += 1
+                break
+            search = search._next
+
+    def kthFromEnd(self, k):
+        """Return value of node at k positions from end."""
+        main = self.head
+        reference = self.head 
+        counter = 0
+        if type(k) is not int:
+            raise Exception('Invalid value! Please enter an integer')
+        if k == 0:
+            raise Exception('Invalid value! Please enter a number greater than 0.')
+        if(self.head is not None):
+            while(counter < k):
+                if(reference is None):
+                    return
+                reference = reference._next
+                counter += 1
+        while(reference is not None):
+            main = main._next
+            reference = reference._next
+        return main.val
