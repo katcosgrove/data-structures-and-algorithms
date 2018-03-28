@@ -4,5 +4,9 @@
   "test_linked_list.py::test_len",
   "test_linked_list.py::test_search",
   "test_linked_list.py::test_fail_search",
-  "test_linked_list.py::test_append"
+  "test_linked_list.py::test_append_to_end",
+  "test_linked_list.py::test_append_to_empty",
+  "test_linked_list.py::test_insert_after",
+  "test_linked_list.py::test_insert_before",
+  "test_linked_list.py::test_kthFromEnd"
 ]

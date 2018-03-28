@@ -11,3 +11,4 @@ You have access to the Node class and all the properties on the Linked List clas
 
 ## Solution
 ![Whiteboarding](https://github.com/katcosgrove/data-structures-and-algorithms/blob/binary-search/assets/ll-insertion.jpg)
+![Whiteboarding](https://github.com/katcosgrove/data-structures-and-algorithms/blob/binary-search/assets/kthFromEnd.jpg)
