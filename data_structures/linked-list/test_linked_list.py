@@ -54,8 +54,11 @@ def test_append_to_empty(empty_ll):
     empty_ll.append(1)
     assert empty_ll.head.val == 1
 
-# def test_append_exception(empty_ll):
-#     assert small_ll.append('a') == str
+
+def test_append_exception(empty_ll):
+    """Test exception for string argument."""
+    with pytest.raises(Exception):
+        empty_ll.append('a')
 
 
 def test_insert_after(small_ll):
@@ -75,12 +78,13 @@ def test_kthFromEnd(small_ll):
     assert small_ll.kthFromEnd(2) == 2
 
 
-# def test_kthFromEnd_last(small_ll):
+def test_kthFromEnd_last(small_ll):
     """Trying to test excpetion for argument of 0."""
-#     assert small_ll.kthFromEnd(0) == 'Invalid value! Please enter a number greater than 0.'
+    with pytest.raises(Exception):
+        small_ll.kthFromEnd(0)
 
 
-# def test_kthFromEnd_string(small_ll):
+def test_kthFromEnd_string(small_ll):
     """Trying to test exception for string argument."""
-#     with pytest.raises(Exception):
-
+    with pytest.raises(Exception):
+        small_ll.kthFromEnd('a')
