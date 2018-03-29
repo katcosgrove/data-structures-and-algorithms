@@ -32,6 +32,7 @@ class LinkedList:
         self._size += 1
 
     def find(self, val):
+        """Check whether or not a value is in the list."""
         search = self.head
         while search:
             if val == search.val:
@@ -90,10 +91,10 @@ class LinkedList:
         except (KeyError, ValueError):
             raise Exception('Value not found!')
 
-    def kthFromEnd(self, k):
+    def kth_from_end(self, k):
         """Return value of node at k positions from end."""
         main = self.head
-        reference = self.head 
+        reference = self.head
         counter = 0
         try:
             if type(k) is not int:

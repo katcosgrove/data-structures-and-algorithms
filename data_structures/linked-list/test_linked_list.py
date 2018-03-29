@@ -73,18 +73,18 @@ def test_insert_before(small_ll):
     assert small_ll.head._next.val == 6
 
 
-def test_kthFromEnd(small_ll):
+def test_kth_from_end(small_ll):
     """Test normal insertion of value k positions from end of list."""
-    assert small_ll.kthFromEnd(2) == 2
+    assert small_ll.kth_from_end(2) == 2
 
 
-def test_kthFromEnd_last(small_ll):
+def test_kth_from_end_last(small_ll):
     """Trying to test excpetion for argument of 0."""
     with pytest.raises(Exception):
-        small_ll.kthFromEnd(0)
+        small_ll.kth_from_end(0)
 
 
-def test_kthFromEnd_string(small_ll):
+def test_kth_from_end_string(small_ll):
     """Trying to test exception for string argument."""
     with pytest.raises(Exception):
-        small_ll.kthFromEnd('a')
+        small_ll.kth_from_end('a')

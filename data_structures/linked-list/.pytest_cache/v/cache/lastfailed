@@ -1,4 +1,5 @@
 {
   "test_linked_list.py::test_after": true,
-  "test_linked_list.py::test_insert_len": true
+  "test_linked_list.py::test_insert_len": true,
+  "test_linked_list.py::test_kthFromEnd": true
 }
