@@ -6,7 +6,13 @@
   "test_linked_list.py::test_fail_search",
   "test_linked_list.py::test_append_to_end",
   "test_linked_list.py::test_append_to_empty",
+  "test_linked_list.py::test_append_exception",
   "test_linked_list.py::test_insert_after",
   "test_linked_list.py::test_insert_before",
-  "test_linked_list.py::test_kthFromEnd"
+  "test_linked_list.py::test_kth_from_end",
+  "test_linked_list.py::test_kth_from_end_last",
+  "test_linked_list.py::test_kth_from_end_string",
+  "test_ll_merge.py::test_merge_list_equal",
+  "test_ll_merge.py::test_merge_list_large_first",
+  "test_ll_merge.py::test_merge_list_small_first"
 ]

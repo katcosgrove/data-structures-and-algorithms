@@ -32,6 +32,7 @@ class LinkedList:
         self._size += 1
 
     def find(self, val):
+        """Check whether or not a value is in the list."""
         search = self.head
         while search:
             if val == search.val:
@@ -41,66 +42,74 @@ class LinkedList:
 
     def append(self, val):
         """Append a node to the end of the list."""
-        if val is str:
-            raise Exception('Please enter an integer, not a string!')
-
-        if self.head is None:
-            self.insert(val)
-        else:
-            search = self.head
-            while search:
-                if search._next is None:
-                    search._next = Node(val)
-                    self._size += 1
-                    break
-                search = search._next
-
+        if type(val) is not int:
+            raise Exception('Please enter an integer.')
+        try:
+            if self.head is None:
+                self.insert(val)
+            else:
+                search = self.head
+                while search:
+                    if search._next is None:
+                        search._next = Node(val)
+                        self._size += 1
+                        break
+                    search = search._next
+        except (ValueError, KeyError):
+            raise Exception('That is not a valid value!')
 
     def insert_before(self, val, newVal):
         """Insert a new node before the matching value."""
         search = self.head
         previous = None
-        while search:
-            if search.val == val:
-                if previous is None:
-                    self.insert(newVal)
-                else:
-                    new_node = Node(newVal)
-                    new_node._next = search
-                    previous._next = new_node
-                    self._size += 1
-                break
-            previous = search
-            search = search._next
+        try:
+            while search:
+                if search.val == val:
+                    if previous is None:
+                        self.insert(newVal)
+                    else:
+                        new_node = Node(newVal)
+                        new_node._next = search
+                        previous._next = new_node
+                        self._size += 1
+                previous = search
+                search = search._next
+        except (KeyError, ValueError):
+            raise Exception('Value not found!')
 
     def insert_after(self, val, newVal):
         """Insert a new node after the matching value."""
         search = self.head
-        while search:
-            if search.val == val:
-                reference = search._next
-                search._next = Node(newVal)
-                search._next._next = reference
-                self._size += 1
-                break
-            search = search._next
+        try:
+            while search:
+                if search.val == val:
+                    reference = search._next
+                    search._next = Node(newVal)
+                    search._next._next = reference
+                    self._size += 1
+                search = search._next
+        except (KeyError, ValueError):
+            raise Exception('Value not found!')
 
-    def kthFromEnd(self, k):
+    def kth_from_end(self, k):
         """Return value of node at k positions from end."""
         main = self.head
-        reference = self.head 
+        reference = self.head
         counter = 0
-        if type(k) is not int:
-            raise Exception('Invalid value! Please enter an integer')
-        if k == 0:
-            raise Exception('Invalid value! Please enter a number greater than 0.')
-        if(self.head is not None):
-            while(counter < k):
-                if(reference is None):
-                    return
+        try:
+            if type(k) is not int:
+                raise Exception('Invalid value! Please enter an integer')
+            if k == 0:
+                raise Exception('Invalid value! Please enter a number greater than 0.')
+            if(self.head is not None):
+                while(counter < k):
+                    if(reference is None):
+                        return
+                    reference = reference._next
+                    counter += 1
+            while(reference is not None):
+                main = main._next
                 reference = reference._next
-                counter += 1
-        while(reference is not None):
-            main = main._next
-            reference = reference._next
-        return main.val
+            return main.val
+        except (KeyError, ValueError):
+            raise Exception('That is not a valid value!')
