@@ -62,6 +62,8 @@ class LinkedList:
         """Insert a new node before the matching value."""
         search = self.head
         previous = None
+        if type(val) is not int:
+            raise Exception('Please enter an integer.')
         try:
             while search:
                 if search.val == val:
@@ -80,6 +82,8 @@ class LinkedList:
     def insert_after(self, val, newVal):
         """Insert a new node after the matching value."""
         search = self.head
+        if type(val) is not int:
+            raise Exception('Please enter an integer.')
         try:
             while search:
                 if search.val == val:
@@ -113,3 +117,13 @@ class LinkedList:
             return main.val
         except (KeyError, ValueError):
             raise Exception('That is not a valid value!')
+
+    def has_loop(self):
+        """Detect whether or not a loop exists in a linked list."""
+        pointer_one, pointer_two = self.head, self.head
+        while pointer_one and pointer_two and pointer_two._next:
+            pointer_one = pointer_one._next
+            pointer_two = pointer_two._next._next
+            if pointer_one is pointer_two:
+                return True
+        return False
