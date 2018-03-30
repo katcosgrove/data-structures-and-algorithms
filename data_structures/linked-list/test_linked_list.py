@@ -119,5 +119,5 @@ def test_has_loop():
 
 def test_has_loop_true():
     """Test small linked list with immediate loop."""
-    small_ll.head._next = small_ll.head
+    small_ll.head._next._next = small_ll.head
     assert small_ll.has_loop() is True
