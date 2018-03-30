@@ -67,10 +67,32 @@ def test_insert_after(small_ll):
     assert small_ll.head._next._next._next.val == 5
 
 
+def test_insert_after_empty(small_ll):
+    """Test insert after at position 0."""
+    small_ll.insert_after(0, 2)
+    assert small_ll.head._next.val == 3
+
+
+def test_insert_after_error(small_ll):
+    with pytest.raises(Exception):
+        small_ll.insert_after('1', 2)
+
+
 def test_insert_before(small_ll):
     """Test if inserts before matched value."""
     small_ll.insert_before(3, 6)
     assert small_ll.head._next.val == 6
+
+
+def test_insert_before_empty(small_ll):
+    """Test insert after at position 0."""
+    small_ll.insert_before(0, 2)
+    assert small_ll.head._next.val == 3
+
+
+def test_insert_before_error(small_ll):
+    with pytest.raises(Exception):
+        small_ll.insert_before('1', 2)
 
 
 def test_kth_from_end(small_ll):
@@ -88,3 +110,14 @@ def test_kth_from_end_string(small_ll):
     """Trying to test exception for string argument."""
     with pytest.raises(Exception):
         small_ll.kth_from_end('a')
+
+
+def test_has_loop():
+    """Test small linked list without loop."""
+    assert small_ll.has_loop() is False
+
+
+def test_has_loop_true():
+    """Test small linked list with immediate loop."""
+    small_ll.head._next = small_ll.head
+    assert small_ll.has_loop() is True
