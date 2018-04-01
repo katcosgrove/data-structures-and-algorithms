@@ -1,0 +1,12 @@
+[
+  "test_stack.py::test_empty_stack_has_no_top",
+  "test_stack.py::test_empty_len",
+  "test_stack.py::test_small_len",
+  "test_stack.py::test_insertion",
+  "test_stack.py::test_insertion_small",
+  "test_stack.py::test_empty_val_on_insert",
+  "test_stack.py::test_pop_small_stack",
+  "test_stack.py::test_pop_empty_stack",
+  "test_stack.py::test_peek_empty_stack",
+  "test_stack.py::test_peek_small_stack"
+]
