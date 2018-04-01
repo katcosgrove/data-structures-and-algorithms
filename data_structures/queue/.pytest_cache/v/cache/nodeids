@@ -1,0 +1,9 @@
+[
+  "test_queue.py::test_empty_stack_has_no_front",
+  "test_queue.py::test_empty_len",
+  "test_queue.py::test_small_len",
+  "test_queue.py::test_insertion_empty",
+  "test_queue.py::test_insertion_small",
+  "test_queue.py::test_dequeue_empty",
+  "test_queue.py::test_dequeue_small"
+]
