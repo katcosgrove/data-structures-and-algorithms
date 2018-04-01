@@ -1,4 +1,3 @@
-
 class Node:
     """Class for a node."""
     def __init__(self, val, next=None):
