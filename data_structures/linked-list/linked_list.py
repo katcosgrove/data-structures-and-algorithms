@@ -99,22 +99,28 @@ class LinkedList:
         """Return value of node at k positions from end."""
         main = self.head
         reference = self.head
+        current = self.head
         counter = 0
         try:
             if type(k) is not int:
-                raise Exception('Invalid value! Please enter an integer')
+                raise TypeError('Invalid value! Please enter an integer')
+
             if k == 0:
-                raise Exception('Invalid value! Please enter a number greater than 0.')
+                while current._next is not None:
+                    current = current._next
+                return current.val
+
             if(self.head is not None):
-                while(counter < k):
+                while(counter <= k):
                     if(reference is None):
                         return
-                    reference = reference._next
                     counter += 1
+                    reference = reference._next
             while(reference is not None):
-                main = main._next
                 reference = reference._next
+                main = main._next
             return main.val
+
         except (KeyError, ValueError):
             raise Exception('That is not a valid value!')
 

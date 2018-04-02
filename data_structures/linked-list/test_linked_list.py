@@ -2,18 +2,6 @@ import pytest
 from linked_list import LinkedList as LL
 
 
-@pytest.fixture
-def empty_ll():
-    """Empty linked list."""
-    return LL()
-
-
-@pytest.fixture
-def small_ll():
-    """Small linked list."""
-    return LL([1, 2, 3, 4])
-
-
 def test_insert_first_node(empty_ll):
     """Test insert for an empty list."""
     assert empty_ll.head is None
@@ -99,13 +87,12 @@ def test_insert_before_error(small_ll):
 
 def test_kth_from_end(small_ll):
     """Test normal insertion of value k positions from end of list."""
-    assert small_ll.kth_from_end(2) == 2
+    assert small_ll.kth_from_end(1) == 2
 
 
 def test_kth_from_end_last(small_ll):
     """Trying to test excpetion for argument of 0."""
-    with pytest.raises(Exception):
-        small_ll.kth_from_end(0)
+    assert small_ll.kth_from_end(0) == 1
 
 
 def test_kth_from_end_string(small_ll):
@@ -114,14 +101,19 @@ def test_kth_from_end_string(small_ll):
         small_ll.kth_from_end('a')
 
 
+@pytest.fixture
+def small_ll():
+    """Small linked list."""
+    return LL([1, 2, 3, 4])
+
+
 def test_has_loop():
     """Test small linked list without loop."""
-    assert small_ll.has_loop() is False
+    temp = small_ll.has_loop()
+    assert temp is False
 
 
 def test_has_loop_true():
     """Test small linked list with immediate loop."""
     small_ll.head._next._next = small_ll.head
     assert small_ll.has_loop() is True
-
-
