@@ -126,6 +126,8 @@ class LinkedList:
 
     def has_loop(self):
         """Detect whether or not a loop exists in a linked list."""
+        if self._size == 0:
+            raise IndexError('There is nothing in the list.')
         pointer_one, pointer_two = self.head, self.head
         while pointer_one and pointer_two and pointer_two._next:
             pointer_one = pointer_one._next

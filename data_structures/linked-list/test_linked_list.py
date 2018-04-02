@@ -111,3 +111,9 @@ def test_has_loop_true(small_ll):
     """Test small linked list with immediate loop."""
     small_ll.head._next._next = small_ll.head
     assert small_ll.has_loop() is True
+
+
+def test_loop_empty(empty_ll):
+    """Test empty list for loop."""
+    with pytest.raises(IndexError):
+        empty_ll.has_loop()
