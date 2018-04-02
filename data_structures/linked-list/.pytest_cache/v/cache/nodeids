@@ -16,6 +16,8 @@
   "test_linked_list.py::test_kth_from_end",
   "test_linked_list.py::test_kth_from_end_last",
   "test_linked_list.py::test_kth_from_end_string",
+  "test_linked_list.py::test_has_loop",
+  "test_linked_list.py::test_has_loop_true",
   "test_ll_merge.py::test_merge_list_equal",
   "test_ll_merge.py::test_merge_list_large_first",
   "test_ll_merge.py::test_merge_list_small_first"
