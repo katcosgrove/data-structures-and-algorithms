@@ -7,11 +7,11 @@ def merge_lists(list_one, list_two):
         while current_two is not None:
             list_one.insert_before(current.val, current_two.val)
             current, current_two = current._next, current_two._next
-        return list_one.head.val
+        return list_one.head
 
     else:
         current, current_two = list_one.head, list_two.head
         while current is not None:
             list_two.insert_before(current_two.val, current.val)
             current, current_two = current._next, current_two._next
-        return list_two.head.val
+        return list_two.head

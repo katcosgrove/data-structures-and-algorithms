@@ -101,19 +101,19 @@ def test_kth_from_end_string(small_ll):
         small_ll.kth_from_end('a')
 
 
-@pytest.fixture
-def small_ll():
-    """Small linked list."""
-    return LL([1, 2, 3, 4])
-
-
-def test_has_loop():
+def test_has_loop_false(small_ll):
     """Test small linked list without loop."""
     temp = small_ll.has_loop()
     assert temp is False
 
 
-def test_has_loop_true():
+def test_has_loop_true(small_ll):
     """Test small linked list with immediate loop."""
     small_ll.head._next._next = small_ll.head
     assert small_ll.has_loop() is True
+
+
+def test_loop_empty(empty_ll):
+    """Test empty list for loop."""
+    with pytest.raises(IndexError):
+        empty_ll.has_loop()
