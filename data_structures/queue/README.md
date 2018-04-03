@@ -9,3 +9,6 @@
 * Define any further magic methods such as len and str to support user functionality and informative responses
 * Define a method called enqueue which takes any value as an argument and adds that value to the back of the queue with an O(1) Time performance
 * Define a method called dequeue which takes no arguments and removes / returns the Node at the front of the queue
+
+## Solution
+![Whiteboarding](https://github.com/katcosgrove/data-structures-and-algorithms/assets/queue-dequeue.jpg)

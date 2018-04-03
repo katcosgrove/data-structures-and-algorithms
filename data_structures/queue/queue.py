@@ -21,12 +21,15 @@ class Queue:
         """Return the value of the front."""
         try:
             return '<front> => {}'.format(self.front.val)
-        except ValueError:
-            print('Oops! The front has no value.')
+        except AttributeError:
+            raise AttributeError('Oops! The front has no value.')
 
     def enqueue(self, val):
         """Add a new node to back of queue."""
         node = Node(val, None)
+
+        if type(val) is not int:
+            raise TypeError('Please enter an integer!')
 
         if self.back is None:
             self.front = node
