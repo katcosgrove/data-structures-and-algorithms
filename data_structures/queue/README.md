@@ -16,3 +16,4 @@ Implement the following methods:
 
 ## Solution
 ![Whiteboarding](https://github.com/katcosgrove/data-structures-and-algorithms/assets/queue-dequeue.jpg)
+![Whiteboarding](https://github.com/katcosgrove/data-structures-and-algorithms/assets/fifo-animal-shelter.jpg)
