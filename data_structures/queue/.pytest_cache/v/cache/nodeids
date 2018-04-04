@@ -1,4 +1,10 @@
 [
+  "test_fifo_animal_shelter.py::test_empty_shelter_enqueue",
+  "test_fifo_animal_shelter.py::test_enqueue_error",
+  "test_fifo_animal_shelter.py::test_enqueue_small",
+  "test_fifo_animal_shelter.py::test_dequeue_empty",
+  "test_fifo_animal_shelter.py::test_dequeue_cat",
+  "test_fifo_animal_shelter.py::test_dequeue_dog",
   "test_queue.py::test_empty_stack_has_no_front",
   "test_queue.py::test_empty_len",
   "test_queue.py::test_small_len",
