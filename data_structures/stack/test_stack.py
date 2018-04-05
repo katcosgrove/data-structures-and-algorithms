@@ -17,6 +17,17 @@ def test_small_len(small_stack):
     assert small_stack.__len__() == 5
 
 
+def test_small_repr(small_stack):
+    """Test repr for a small stack."""
+    assert small_stack.__repr__() == '<top> => 5'
+
+
+def test_empty_repr(empty_stack):
+    """Test repr raises error with empty stack."""
+    with pytest.raises(AttributeError):
+        empty_stack.__repr__()
+
+
 def test_insertion(empty_stack):
     """Test push a value to an empty stack."""
     assert empty_stack.top is None

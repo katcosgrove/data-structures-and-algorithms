@@ -21,8 +21,8 @@ class Stack:
         """Return the value of the top."""
         try:
             return '<top> => {}'.format(self.top.val)
-        except ValueError:
-            print('Oops! The top has no value.')
+        except AttributeError:
+            raise AttributeError('Oops! The top has no value. Stack empty.')
 
     def push(self, val):
         """Push a value to the stack."""
