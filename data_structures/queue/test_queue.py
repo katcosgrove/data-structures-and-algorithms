@@ -18,12 +18,20 @@ def test_small_len(small_queue):
 
 
 def test_str_empty(empty_queue):
+    """Test str magic method on empty queue."""
     with pytest.raises(Exception):
         empty_queue.__str__()
 
 
 def test_str(small_queue):
+    """Test str magic method on small queue."""
     assert small_queue.__str__() == '<front> => 1'
+
+
+def test_init(small_queue):
+    """Test front and back."""
+    assert small_queue.front.val == 1
+    assert small_queue.back.val == 5
 
 
 def test_insertion_empty(empty_queue):
@@ -40,15 +48,18 @@ def test_insertion_small(small_queue):
 
 
 def test_insertion_string(small_queue):
+    """Test inserting a string raises error."""
     with pytest.raises(Exception):
         small_queue.enqueue('a')
 
 
 def test_dequeue_empty(empty_queue):
+    """Test dequeue of an empty list raises error."""
     with pytest.raises(ValueError):
         empty_queue.dequeue()
 
 
 def test_dequeue_small(small_queue):
+    """Test dequeue works."""
     small_queue.dequeue()
     assert small_queue.__len__() == 4

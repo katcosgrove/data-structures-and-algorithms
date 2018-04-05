@@ -23,4 +23,12 @@ class Queue(object):
 
     def dequeue(self):
         """Remove a value from the front of the queue."""
-       pass
+        if self.front is not None:
+            first = self.front
+            self.front = self.front._next
+            self._size -= 1
+            return first.val
+        else:
+            if self.back is not None:
+                self.back = None
+            raise ValueError('Queue is empty.')
