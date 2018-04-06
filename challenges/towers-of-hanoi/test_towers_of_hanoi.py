@@ -8,16 +8,15 @@ def test_tower_exception_type():
         towers.towers_of_hanoi('n')
 
 
-# def test_tower_integer():
-#     """Test tower function returns integer."""
-#     assert towers.towers_of_hanoi(3) == 
+def test_tower_return_three():
+    """Test tower of hanoi function returns correct last move with three."""
+    assert towers.towers_of_hanoi(3) == 'move disk from A to C'
 
 
-# def test_move_tower_ideal():
-#     """Test move tower function with three discs."""
-#     towers.move_tower(3, 'A', 'B', 'C')
+def test_tower_return_two():
+    """Test tower of hanoi function returns correct last move with two."""
+    assert towers.towers_of_hanoi(2) == 'move disk from A to C'
 
 
-# def test_move_tower_short():
-#     """Test move tower function with two discs."""
-#     towers.move_tower(2, 'A', 'B', 'C') == [1, 2]
+def test_tower_with_zero():
+    assert towers.towers_of_hanoi(1) == 'move disk from A to C'
