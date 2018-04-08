@@ -97,32 +97,17 @@ class LinkedList:
 
     def kth_from_end(self, k):
         """Return value of node at k positions from end."""
-        main = self.head
-        reference = self.head
+        length = self._size
         current = self.head
-        counter = 0
-        try:
-            if type(k) is not int:
-                raise TypeError('Invalid value! Please enter an integer')
 
-            if k == 0:
-                while current._next is not None:
-                    current = current._next
-                return current.val
+        if type(k) is not int:
+            raise TypeError('Please enter an integer!')
+        if k > length:
+            raise ValueError('Argument larger than list!')
 
-            if(self.head is not None):
-                while(counter <= k):
-                    if(reference is None):
-                        return
-                    counter += 1
-                    reference = reference._next
-            while(reference is not None):
-                reference = reference._next
-                main = main._next
-            return main.val
-
-        except (KeyError, ValueError):
-            raise Exception('That is not a valid value!')
+        for item in range((length - 1) - k):
+            current = current._next
+        return current.val
 
     def has_loop(self):
         """Detect whether or not a loop exists in a linked list."""
