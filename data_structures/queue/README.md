@@ -19,7 +19,7 @@ Using stacks, build a queue.
 * dequeue() which extracts a value from the Queue using a first-in, first-out approach.
 
 ## Solution
-![Whiteboarding](https://github.com/katcosgrove/data-structures-and-algorithms/assets/queue-with-stacks.jpg)
+![Whiteboarding](https://github.com/katcosgrove/data-structures-and-algorithms/blob/master/assets/queue-with-stacks.jpg)
 
 ## Day Two Challenge
 
@@ -31,4 +31,4 @@ Implement the following methods:
 * dequeue(pref): returns either a dog or a cat. If pref, a string, is ‘cat’ return the longest-waiting cat. If pref is ‘dog’, return the longest-waiting dog. For anything else, return either a cat or a dog.
 
 ## Solution
-![Whiteboarding](https://github.com/katcosgrove/data-structures-and-algorithms/assets/fifo-animal-shelter.jpg)
+![Whiteboarding](https://github.com/katcosgrove/data-structures-and-algorithms/blob/master/assets/fifo-animal-shelter.jpg)

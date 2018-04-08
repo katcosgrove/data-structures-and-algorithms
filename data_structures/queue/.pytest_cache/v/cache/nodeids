@@ -10,9 +10,15 @@
   "test_queue.py::test_small_len",
   "test_queue.py::test_str_empty",
   "test_queue.py::test_str",
+  "test_queue.py::test_init",
   "test_queue.py::test_insertion_empty",
   "test_queue.py::test_insertion_small",
   "test_queue.py::test_insertion_string",
   "test_queue.py::test_dequeue_empty",
-  "test_queue.py::test_dequeue_small"
+  "test_queue.py::test_dequeue_small",
+  "test_queue_with_stacks.py::test_insertion_empty",
+  "test_queue_with_stacks.py::test_insertion_small",
+  "test_queue_with_stacks.py::test_insertion_string",
+  "test_queue_with_stacks.py::test_dequeue_empty",
+  "test_queue_with_stacks.py::test_dequeue_small"
 ]
