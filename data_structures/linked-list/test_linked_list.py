@@ -101,6 +101,12 @@ def test_kth_from_end_string(small_ll):
         small_ll.kth_from_end('a')
 
 
+def test_kth_from_end_too_late(small_ll):
+    """Test passing argument larger than list length."""
+    with pytest.raises(ValueError):
+        small_ll.kth_from_end(20)
+
+
 def test_has_loop_false(small_ll):
     """Test small linked list without loop."""
     temp = small_ll.has_loop()
