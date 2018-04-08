@@ -101,7 +101,7 @@ def test_kth_from_end_string(small_ll):
         small_ll.kth_from_end('a')
 
 
-def test_kth_from_end_too_late(small_ll):
+def test_kth_from_end_too_large(small_ll):
     """Test passing argument larger than list length."""
     with pytest.raises(ValueError):
         small_ll.kth_from_end(20)
