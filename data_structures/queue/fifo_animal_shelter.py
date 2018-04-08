@@ -1,6 +1,39 @@
 from node import Node
 
 
+class Dog:
+    """Create a dog class."""
+    def __init__(self):
+        self.species = 'dog'
+        self.name = 'Fido'
+
+    def __str___(self):
+        """Return species."""
+        return self.species
+
+
+class Cat:
+    """Create a cat class."""
+    def __init__(self):
+        self.species = 'cat'
+        self. name = 'Fluffy'
+
+    def __str___(self):
+        """Return species."""
+        return self.species
+
+
+class Iguana:
+    """Create a cat class."""
+    def __init__(self):
+        self.species = 'iguana'
+        self. name = 'Hank'
+
+    def __str___(self):
+        """Return species."""
+        return self.species
+
+
 class AnimalShelter:
     """Create a FIFO AnimalShelter class"""
     def __init__(self, iter=[]):
@@ -17,9 +50,9 @@ class AnimalShelter:
 
     def enqueue(self, animal=None):
         """Insert an animal to the back of the queue"""
-        node = Node(animal)
+        node = Node(animal.species)
 
-        if animal != 'dog' and animal != 'cat':
+        if animal.species != 'dog' and animal.species != 'cat':
             raise ValueError('Sorry, we only take dogs or cats!')
 
         if self.front is None:

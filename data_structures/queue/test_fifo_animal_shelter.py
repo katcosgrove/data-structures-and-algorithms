@@ -1,4 +1,5 @@
 from fifo_animal_shelter import AnimalShelter as shelter
+from fifo_animal_shelter import Dog, Cat, Iguana
 import pytest
 
 
@@ -11,21 +12,21 @@ def empty_shelter():
 @pytest.fixture
 def small_shelter():
     """Create a short, alternating shelter queue."""
-    return shelter(['dog', 'cat', 'dog', 'cat'])
+    return shelter([Dog(), Cat(), Dog(), Cat()])
 
 
 def test_empty_shelter_enqueue(empty_shelter):
-    empty_shelter.enqueue('cat')
+    empty_shelter.enqueue(Cat())
     assert empty_shelter.front.val == 'cat'
 
 
 def test_enqueue_error(small_shelter):
     with pytest.raises(ValueError):
-        small_shelter.enqueue(6)
+        small_shelter.enqueue(Iguana())
 
 
 def test_enqueue_small(small_shelter):
-    small_shelter.enqueue('cat')
+    small_shelter.enqueue(Cat())
     assert small_shelter.back.val == 'cat'
 
 
