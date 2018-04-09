@@ -16,7 +16,7 @@
   "test_linked_list.py::test_kth_from_end",
   "test_linked_list.py::test_kth_from_end_last",
   "test_linked_list.py::test_kth_from_end_string",
-  "test_linked_list.py::test_kth_from_end_too_late",
+  "test_linked_list.py::test_kth_from_end_too_large",
   "test_linked_list.py::test_has_loop_false",
   "test_linked_list.py::test_has_loop_true",
   "test_linked_list.py::test_loop_empty",
