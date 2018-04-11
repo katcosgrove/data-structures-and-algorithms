@@ -8,5 +8,10 @@ def small_bst():
 
 
 @pytest.fixture
+def lopsided():
+    return BST([1, 3, 5, 7, 9, 11])
+
+
+@pytest.fixture
 def empty_bst():
     return BST()

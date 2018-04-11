@@ -7,4 +7,4 @@ Square Brackets : []
 Curly Brackets : {}
 
 ## Solution
-![Whiteboarding](https://github.com/katcosgrove/data-structures-and-algorithms/assets/multi-bracket-validation.jpg)
+![Whiteboarding](https://github.com/katcosgrove/data-structures-and-algorithms/blob/master/assets/multi-bracket-validation.jpg)
