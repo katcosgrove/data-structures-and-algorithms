@@ -10,13 +10,16 @@ def test_tower_exception_type():
 
 def test_tower_return_three():
     """Test tower of hanoi function returns correct last move with three."""
-    assert towers.towers_of_hanoi(3) == 'move disk from A to C'
+    temp = towers.towers_of_hanoi(3)
+    assert temp == ['move disk from A to C']
 
 
 def test_tower_return_two():
     """Test tower of hanoi function returns correct last move with two."""
-    assert towers.towers_of_hanoi(2) == 'move disk from A to C'
+    temp = towers.towers_of_hanoi(2)
+    assert temp == ['move disk from A to C']
 
 
 def test_tower_with_zero():
-    assert towers.towers_of_hanoi(1) == 'move disk from A to C'
+    temp = towers.towers_of_hanoi(1)
+    assert temp == ['move disk from A to C']
