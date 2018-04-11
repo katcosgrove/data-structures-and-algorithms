@@ -86,3 +86,24 @@ def test_postorder_empty(empty_bst):
     temp = []
     empty_bst.post_order(lambda x: temp.append(x.val))
     assert temp == []
+
+
+def test_breadth_first(small_bst):
+    """Test breadth first traversal with small BST."""
+    temp = []
+    small_bst.breadth_first_traversal(lambda x: temp.append(x.val))
+    assert temp == [20, 5, 10, 11]
+
+
+def test_breadth_first_lopsided(lopsided):
+    """Test breadth first traversal with small BST."""
+    temp = []
+    lopsided.breadth_first_traversal(lambda x: temp.append(x.val))
+    assert temp == [1, 3, 5, 7, 9, 11]
+
+
+def test_breadth_first_empty(empty_bst):
+    """Test breadth first traversal with empty BST."""
+    temp = []
+    with pytest.raises(IndexError):
+        empty_bst.breadth_first_traversal(lambda x: temp.append(x.val))
