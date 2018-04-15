@@ -5,7 +5,7 @@ from .fizz_buzz_tree import fizz_buzz_tree, fizz_buzz
 def test_fizz_buzz_tree(small_bst):
     """Test fizzbuzz tree function with all possibilities."""
     temp = fizz_buzz_tree(small_bst)
-    assert temp == ['Buzz', 'FizzBuzz', 'Fizz', 11]
+    assert temp.root.val == 'Buzz'
 
 
 def test_fizz_buzz_tree_empty(empty_bst):
@@ -17,7 +17,7 @@ def test_fizz_buzz_tree_empty(empty_bst):
 def test_fizz_buzz_tree_none(no_fizzbuzz):
     """Test fizzbuzz tree function with no conditions met."""
     temp = fizz_buzz_tree(no_fizzbuzz)
-    assert temp == [1, 4, 7, 11]
+    assert temp.root.val == 1
 
 
 def test_fizz_buzz_fizz(fizz_node):
