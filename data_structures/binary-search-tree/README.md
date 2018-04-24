@@ -11,3 +11,11 @@
 * This class should accept an iterable as an argument when initialized, such as [1, 2, 3, 4], which creates a tree from that argument
 * This class should be aware of depth-first traversal methods for in_order, pre_order, and post_order traversals
 * This class should have the ability to insert a new node into the tree. Your insertion should follow an O(log n) search solution to find the correct place for inserting the new node.
+
+## Challenge: Breadth First Traversal
+
+Write a function called breadthFirstTraversal which takes a Binary Tree as its unique input. Without utilizing any of the built-in methods available to your language, traverse the input tree using a Breadth-first approach; print every visited node’s value.
+
+
+### Solution:
+![Whiteboarding](https://github.com/katcosgrove/data-structures-and-algorithms/blob/master/assets/breadth-first-traversal.jpg)

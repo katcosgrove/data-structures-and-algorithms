@@ -83,6 +83,24 @@ class BST:
 
         _walk(self.root)
 
+    def breadth_first_traversal(self, operation):
+        """Breadth first traversal."""
+        if self.root is None:
+            raise IndexError('The tree is empty!')
+
+        queue = [self.root]
+
+        while len(queue):
+            node = queue.pop(0)
+
+            if node.left:
+                queue.append(node.left)
+
+            if node.right:
+                queue.append(node.right)
+
+            operation(node)
+
     def insert(self, val):
         """Insert a new node."""
         node = Node(val)
