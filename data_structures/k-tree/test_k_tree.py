@@ -1,5 +1,5 @@
 import pytest
-from k_tree import KTree
+from k_tree import KTree, print_level_order
 
 
 def test_tree_repr(small_ktree):
@@ -65,3 +65,15 @@ def test_breadth_first_empty(empty_ktree):
     temp = []
     empty_ktree.breadth_first(lambda x: temp.append(x.val))
     assert temp == []
+
+
+def test_print_level_order(small_ktree):
+    """Test print level order of small ktree."""
+    temp = print_level_order(small_ktree)
+    assert temp == '1\n234\n56\n7\n\n'
+
+
+def test_print_level_order_empty(empty_ktree):
+    """Test print level order of empty ktree."""
+    with pytest.raises(AttributeError):
+        print_level_order(empty_ktree)

@@ -78,7 +78,6 @@ class KTree:
             if self.root is None:
                 self.root = node
                 return node
-            raise ValueError('There is no parent value.')
 
         def _walk(current=None):
             if current.val == parent_val:
@@ -93,5 +92,31 @@ class KTree:
         node = _walk(self.root)
 
         if node is None:
-            raise ValueError('Parent value not found')
+            raise ValueError('Parent value not found!')
         return node
+
+
+def print_level_order(tree):
+    """Print the tree, level by level."""
+    temp_two = []
+    try:
+        temp_two.append(str(tree.root.val) + '\n')
+    except AttributeError:
+        raise AttributeError('The tree is empty!')
+
+    def _walk(nodes=None):
+        temp = []
+        for node in nodes:
+            for child in node.children:
+                temp.append(child)
+                temp_two.append(str(child.val))
+
+        temp_two.append('\n')
+
+        if len(temp):
+            _walk(temp)
+
+    if tree.root:
+        _walk([tree.root])
+
+    return ''.join(temp_two)
