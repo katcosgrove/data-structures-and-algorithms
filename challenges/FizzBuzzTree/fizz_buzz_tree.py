@@ -15,15 +15,14 @@ def fizz_buzz(node):
 
 def fizz_buzz_tree(tree):
     """Traverses a tree and executes fizzbuzz helper at each node."""
-    temp = []
     if tree.root is None:
         raise ValueError('This tree is empty!')
+
     def _walk(node=None):
         if node is None:
             return
 
         fizz_buzz(node)
-        temp.append(node.val)
 
         if node.left is not None:
             _walk(node.left)
@@ -32,4 +31,4 @@ def fizz_buzz_tree(tree):
             _walk(node.right)
 
     _walk(tree.root)
-    return temp
+    return tree
