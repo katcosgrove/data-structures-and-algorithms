@@ -120,3 +120,27 @@ def print_level_order(tree):
         _walk([tree.root])
 
     return ''.join(temp_two)
+
+
+def find_matches(tree, val):
+    """Traverse the tree and check each node for provided value. Return matches."""
+    matches = []
+
+    if tree.root is None:
+        raise AttributeError('The tree is empty!')
+
+    def _walk(nodes=None):
+        temp = []
+        for node in nodes:
+            for child in node.children:
+                temp.append(child)
+                if child.val == val:
+                    matches.append(child)
+
+        if len(temp):
+            _walk(temp)
+
+    if tree.root:
+        _walk([tree.root])
+
+    return matches

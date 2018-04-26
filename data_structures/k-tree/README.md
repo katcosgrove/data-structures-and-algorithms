@@ -10,3 +10,12 @@ Write a function which takes in a k-ary tree. Without utilizing any of the built
 
 ### Solution:
 ![Whiteboarding](https://github.com/katcosgrove/data-structures-and-algorithms/blob/master/assets/print-level-order.jpg)
+
+## Challenge: Find Matches
+
+Write a function that takes a k-ary tree with non-unique values and a target value.
+Return a collection of all the nodes from within the tree that match the provided value.
+Avoid utilizing any of the built-in methods available to your language.
+
+### Solution: 
+![Whiteboarding](https://github.com/katcosgrove/data-structures-and-algorithms/blob/master/assets/find-matches.jpg)
