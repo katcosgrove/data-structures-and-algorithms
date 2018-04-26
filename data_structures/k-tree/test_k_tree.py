@@ -1,5 +1,5 @@
 import pytest
-from k_tree import KTree, print_level_order
+from k_tree import print_level_order, find_matches
 
 
 def test_tree_repr(small_ktree):
@@ -77,3 +77,21 @@ def test_print_level_order_empty(empty_ktree):
     """Test print level order of empty ktree."""
     with pytest.raises(AttributeError):
         print_level_order(empty_ktree)
+
+
+def test_find_matches_no_dupes(small_ktree):
+    """Test find matches with small ktree."""
+    temp = find_matches(small_ktree, 3)
+    assert len(temp) == 1
+
+
+def test_find_matches_with_dupes(dupe_ktree):
+    """Test find matches with ktree containing duplicates."""
+    temp = find_matches(dupe_ktree, 3)
+    assert len(temp) == 2
+
+
+def test_find_matches_error(empty_ktree):
+    """Test find matches with an emtpy ktree to raise error."""
+    with pytest.raises(AttributeError):
+        find_matches(empty_ktree, 1)
