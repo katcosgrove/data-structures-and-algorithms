@@ -1,5 +1,5 @@
 from linked_list import LinkedList
-from functools import reduce
+# from functools import reduce
 
 
 class HashTable:
@@ -31,7 +31,7 @@ class HashTable:
     def remove(self, key):
         """Remove value at given key."""
         bucket = self.buckets[self.hash_key(key)]
-        current = bucket.head
+        current = bucket.head  # lol buckethead
         last = current
         while current:
             if key in current.val.keys():

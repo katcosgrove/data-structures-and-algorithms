@@ -23,6 +23,12 @@ def test_set_empty(empty_hash_table):
     assert empty_hash_table.buckets[448].head.val['test'] == 't'
 
 
+def test_set_small(small_hash_table):
+    """Test set in empty hash table."""
+    small_hash_table.set('test', 't')
+    assert small_hash_table.buckets[0].head.val['test'] == 't'
+
+
 def test_get(empty_hash_table):
     """Test get in empty table."""
     empty_hash_table.set('test', 't')
@@ -50,4 +56,3 @@ def test_remove_empty(empty_hash_table):
         empty_hash_table.set('act', 'a')
         empty_hash_table.remove('cat')
         assert empty_hash_table.get('act') == 'a'
-
