@@ -10,3 +10,10 @@ Without utilizing any of the built-in library methods available to your language
 
 ### Solution:
 ![Whiteboarding](https://github.com/katcosgrove/data-structures-and-algorithms/blob/master/assets/repeated-word.jpg)
+
+## Challenge: Tree Intersection
+Write a function called tree_intersection that takes two binary tree parameters.
+Without utilizing any of the built-in library methods available to your language, return a set of values found in both trees.
+
+### Solution:
+![Whiteboarding](https://github.com/katcosgrove/data-structures-and-algorithms/blob/master/assets/tree-intersection.jpg)
