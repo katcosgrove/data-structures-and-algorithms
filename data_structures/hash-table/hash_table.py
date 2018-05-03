@@ -8,6 +8,19 @@ class HashTable:
         self.max_size = max_size
         self.buckets = [LinkedList() for _ in range(max_size)]
 
+    def __iter__(self):
+        keys = []
+
+        for bucket in self.buckets:
+            current = bucket.head
+
+            while current:
+                for key in current.val.keys():
+                    keys.append(key)
+                current = current._next
+
+        return iter(keys)
+
     def hash_key(self, key):
         """Get a hashed key for adding to the table."""
         if type(key) is not str:
