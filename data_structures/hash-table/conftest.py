@@ -16,6 +16,36 @@ def empty_hash_table():
 
 
 @pytest.fixture
+def even_table_one():
+    """Synonyms hash table."""
+    table = HashTable()
+    table.set('fond', 'enamored')
+    table.set('wrath', 'anger')
+    table.set('diligent', 'employed')
+    return table
+
+
+@pytest.fixture
+def even_table_two():
+    """Antonyms hash table."""
+    table = HashTable()
+    table.set('fond', 'averse')
+    table.set('wrath', 'delight')
+    table.set('diligent', 'idle')
+    return table
+
+
+@pytest.fixture
+def uneven_table():
+    """Antonym table without all matches."""
+    table = HashTable()
+    table.set('fond', 'averse')
+    table.set('wrath', 'delight')
+    table.set('flow', 'jam')
+    return table
+
+
+@pytest.fixture
 def small_bst():
     return BST(['20', '5', '10', '11'])
 
